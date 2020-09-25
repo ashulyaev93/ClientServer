@@ -3,7 +3,7 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MainApp {
+public class MainApp {//сервер
     public static void main(String...str){
         try(ServerSocket sc = new ServerSocket(8085)) {
             System.out.println("Server is listening");

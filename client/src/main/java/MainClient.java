@@ -3,7 +3,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.nio.file.Paths;
 
-public class MainClient {
+public class MainClient { //клиентская часть
 
     public static void main(String...str){
         try(Socket socket = new Socket("localhost", 8085)){
