@@ -8,7 +8,7 @@ public class TempFileMessage implements Serializable {
     private long size;
     private byte[] bytes;
 
-    public TempFileMessage(Path path) {
+    public TempFileMessage(Path path) {//управление файлом
         try {
             this.fileName = path.getFileName().toString();
             this.size = Files.size(path);
