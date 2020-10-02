@@ -10,7 +10,7 @@ public class MainClient {
             TempFileMessage tfm = new TempFileMessage(Paths.get("client/client_repository/exampleTxt.txt"));
             out.writeObject(tfm);
 
-            //передача файла;
+            //передача файла
             String fileName = "exampleTxt.txt";
             short fileNameLength = (short) fileName.length();
             out.writeShort(fileNameLength);

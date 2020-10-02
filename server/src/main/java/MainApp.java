@@ -13,7 +13,7 @@ public class MainApp {
                     System.out.print((char)b);
                 }
 
-                  //передача файла;
+                  //передача файла
                 int x = in.read();
                 short fileNameSize = in.readShort();
                 byte[] fileNameBytes = new byte[fileNameSize];
