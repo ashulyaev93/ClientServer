@@ -9,20 +9,11 @@ public class MainApp {
             try(Socket socket = sc.accept(); ObjectInputStream in = new ObjectInputStream(socket.getInputStream())){
                 TempFileMessage tfm = (TempFileMessage) in.readObject();
                 byte[] bytes = tfm.getBytes();
-                for(byte b:bytes){
-                    System.out.print((char)b);
-                }
 
-                  //передача файла
-                int x = in.read();
-                short fileNameSize = in.readShort();
-                byte[] fileNameBytes = new byte[fileNameSize];
-                in.read(fileNameBytes);
-                String fileName = new String(fileNameBytes);
-                long fileSize = in.readLong();
-                try(OutputStream out = new BufferedOutputStream(new FileOutputStream("server/server_repository"+fileName))){
-                    for(int i = 0; i < fileSize; i++){
-                        out.write(in.read());
+                //передача файла
+                try(OutputStream out = new BufferedOutputStream(new FileOutputStream("server/server_repository/"+tfm.getFileName()))){
+                    for(byte b: bytes){
+                        out.write(b);
                     }
                 }
             }
