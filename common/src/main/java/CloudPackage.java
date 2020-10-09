@@ -1,5 +1,5 @@
 import java.io.Serializable;
-//Получить текстовый документ, но это не нужно!
+
 public class CloudPackage implements Serializable {
     private String text;
 
